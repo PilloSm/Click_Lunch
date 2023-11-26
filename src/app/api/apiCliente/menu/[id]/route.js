@@ -11,7 +11,8 @@ export async function GET(request,{params}) {
     c.nombre,
     c.descripcion,
     c.precio,
-    MAX(COALESCE(ci.cantidad / di.cantidad, 0)) AS cantidad_preparable
+    c.imagen,
+    MIN(COALESCE(ci.cantidad / di.cantidad, 0)) AS cantidad_preparable
 FROM
     cat_comidas c
 JOIN
@@ -28,7 +29,7 @@ GROUP BY
         { error: "Producto no encontrado" },
         { status: 500 }
       );
-    return NextResponse.json(cantidad[0][0]);
+    return NextResponse.json(cantidad[0]);
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 500 });
   }
