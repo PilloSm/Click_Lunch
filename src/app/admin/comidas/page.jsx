@@ -46,22 +46,18 @@ export default function IngresarComida() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Crear un objeto FormData
     const formData = new FormData();
     
-    // Agregar datos de la comida al FormData
     formData.append('nombre', datos.nombre);
     formData.append('descripcion', datos.descripcion);
     formData.append('precio', datos.precio);
     formData.append('imagen', file);
 
-    // Agregar ingredientes al FormData
     ingredientes.forEach((ingrediente, index) => {
       formData.append(`ingredientes[${index}][id_ingrediente]`, ingrediente.id_ingrediente);
       formData.append(`ingredientes[${index}][cantidad]`, ingrediente.cantidad);
     });
 
-    // Realizar la petición POST
     try {
       const res = await axios.post('http://localhost:3000/api/apiCafeteria/comidas', formData, {
         headers: {
