@@ -44,6 +44,9 @@ const DatosCuenta = ({id_cuenta, usuarios, correo,saldo}) => {
           className="absolute w-[438px] h-[35px] top-[4px] left-[5px] font-nunito font-normal bg-[white] text-black placeholder-black text-[24px] leading-normal tracking-normal border-none outline-none"
         />
       </div>
+      <table>
+        
+      </table>
     </>
   );
 };

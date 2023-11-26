@@ -1,8 +1,8 @@
-import { conn } from "@/libs/db"
+import { conn } from "@/libs/db";
 
 export default async function GET(request, { params }) {
-try {
-    const res= await conn.query(`SELECT
+  try {
+    const res = await conn.query(`SELECT
     m.id_pedido,
     m.estado,
     d.cantidad,
@@ -14,8 +14,6 @@ JOIN
 JOIN
     cat_comidas c ON d.id_comida = c.id_comidas
 WHERE 
-    m.estado=${params.id}`)
-} catch (error) {
-    
-}    
+    m.estado=${params.id}`);
+  } catch (error) {}
 }

@@ -15,7 +15,6 @@ export default function Informacion() {
     });
   };
   const session = useSession();
-  console.log(session);
 
   return (
     <div className="bg-white flex flex-row justify-center w-full">
