@@ -1,0 +1,44 @@
+{
+  "nombre":"pan",
+  "precio":10,
+  "unidad":3,
+  "cantidad":40
+}
+{
+  "nombre": "hamburguesa",
+  "tipo": 10,
+  "descripcion": "cafeconpan",
+  "precio": 40,
+  "imagen": "",
+  "ingredientes": [
+    {
+      "id_comida": 1,
+      "id_ingrediente": 3,
+      "cantidad": 0.5
+    },
+    {
+      "id_comida": 1,
+      "id_ingrediente": 2,
+      "cantidad": 1
+    },
+    {
+      "id_comida": 1,
+      "id_ingrediente": 1,
+      "cantidad": 2
+    }
+  ]
+}
+const arreglo = {
+    id_cuenta: 1,
+    total: 300,
+    estado: 1,
+    detalle: [
+      {
+        id_pedido: 1,
+        id_comida: 1,
+        cantidad: 3,
+        precio: 23,
+      },
+      { id_pedido: 1, id_comida: 10, cantidad: 4, precio: 50 },
+    ],
+  };
