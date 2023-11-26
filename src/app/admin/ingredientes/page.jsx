@@ -9,6 +9,7 @@ export default function Ingredientes() {
     cantidad: "",
     unidad: "",
   });
+  //Pedro los datos de los ingredientes son estos
   const rouoter = useRouter();
   const handleCahnge = (e) => {
     setDatos({

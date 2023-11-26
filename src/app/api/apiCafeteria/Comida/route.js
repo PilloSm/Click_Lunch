@@ -10,20 +10,20 @@ cloudinary.config({
 
 export async function POST(request) {
   try {
-    const data = await request.json();
-    const imagen = data.imagen;
+    const data = await request.formData();
+    const imagen = data.get("imagen");
     const bytes = await imagen.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    const filePath = path.join(process.cwd(), "public", data.nombre);
+    const filePath = path.join(process.cwd(), "public", data.get("nombre"));
     const res = await cloudinary.uploader.upload(filePath, {
-      public_id: data.nombre,
+      public_id: data.get("nombre"),
     });
 
     const comida = {
-      nombre: data.nombre,
-      tipo: data.tipo,
-      descripcion: data.descripcion,
-      precio: data.precio,
+      nombre: data.get("nombre"),
+      tipo: data.get("tipo"),
+      descripcion: data.get("descripcion"),
+      precio: data.get("precio"),
       imagen: res.secure_url,
     };
 
