@@ -118,7 +118,7 @@ export default function Registrar() {
               Registrarse
             </div>
           </button>
-          <Link href="/inicio">
+          <Link href="/">
             <p className="absolute w-404 top-[903px] left-[540px] font-normal text-blue-500 text-2xl text-center underline">
               ¿Ya tienes cuenta? Inicia sesión
             </p>
